@@ -1,17 +1,8 @@
 <template>
   <div id="app">
-    <header class="w3-container w3-theme w3-padding">
-      <div class="w3-center">
-        <h1 class="w3-xxxlarge w3-animate-top">Purjehtijat.fi</h1>
-        <h4>Tuulesta temmattua..</h4>
-      </div>
-    </header>
-    <posts></posts>
-    <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-      <a class="w3-btn-floating w3-teal" href="https://twitter.com/purjehtijatFI" title="Twitter">
-        <i class="fa fa-twitter"></i>
-      </a>
-    </footer>
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+      <posts></posts>
+    </div>
   </div>
 </template>
 

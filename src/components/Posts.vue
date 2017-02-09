@@ -1,7 +1,9 @@
 <template>
   <div class="posts">
-    <div class="w3-row-padding">
-      <card v-for="post in posts" v-bind:post="post"></card>
+    <div class="w3-row-padding w3-padding-16 w3-center" v-for="i in rowCount">
+      <div class="w3-quarter" v-for="post in postCountInRow(i)">
+        <card v-bind:post="post"></card>
+      </div>
     </div>
   </div>
 </template>
@@ -20,12 +22,19 @@ export default {
 
   data () {
     return {
+      cardsPerRow: 4,
       posts: []
     }
   },
 
   created: function () {
     this.fetchPosts()
+  },
+
+  computed: {
+    rowCount () {
+      return Math.ceil(this.posts.length / this.cardsPerRow)
+    }
   },
 
   methods: {
@@ -35,6 +44,9 @@ export default {
       }, (response) => {
         console.log('API call error: ' + response.status + ': ' + response.statusText)
       })
+    },
+    postCountInRow (index) {
+      return this.posts.slice((index - 1) * this.cardsPerRow, index * this.cardsPerRow)
     }
   }
 
