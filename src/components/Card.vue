@@ -2,7 +2,8 @@
 <template>
   <div>
     <a v-bind:href="post.url" target="_blank">
-      <img v-bind:src="post.thumbnail" style="width:100%">
+      <!-- <img v-bind:src="post.thumbnail" style="width:100%"> -->
+      <img v-lazy="post.thumbnail" style="width:100%" />
     </a>
     <p>{{ formatDate() }}</p>
     <a v-bind:href="post.url" target="_blank">
