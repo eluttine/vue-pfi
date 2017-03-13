@@ -1,6 +1,6 @@
 <template>
   <div class="posts">
-    <div class="w3-row-padding w3-padding-16 w3-center" v-for="i in rowCount">
+    <div class="w3-row-padding w3-margin-bottom w3-center" v-for="i in rowCount">
       <div class="w3-quarter" v-for="post in postCountInRow(i)">
         <card v-bind:post="post"></card>
       </div>

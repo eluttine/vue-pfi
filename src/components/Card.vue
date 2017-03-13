@@ -2,8 +2,7 @@
 <template>
   <div>
     <a v-bind:href="post.url" target="_blank">
-      <!-- <img v-bind:src="post.thumbnail" style="width:100%"> -->
-      <img v-lazy="post.thumbnail" style="width:100%" />
+      <img v-lazy="post.thumbnail" class="w3-hover-opacity post-image" />
     </a>
     <p>{{ formatDate() }}</p>
     <a v-bind:href="post.url" target="_blank">
@@ -36,5 +35,7 @@ export default {
 </script>
 
 <style>
-body,h1,h2,h3,h4,h5,h6,p {font-family: "Karma", sans-serif}
+.post-image {
+  width: 100%;
+}
 </style>

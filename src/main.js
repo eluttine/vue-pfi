@@ -7,7 +7,9 @@ import VueLazyload from 'vue-lazyload'
 import VueResource from 'vue-resource'
 
 Vue.use(VueResource)
-Vue.use(VueLazyload)
+Vue.use(VueLazyload, {
+  error: 'static/images/error.png'
+})
 
 /* eslint-disable no-new */
 new Vue({
