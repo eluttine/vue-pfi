@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "bulma": "^0.4.0",
     "moment": "^2.17.1",
     "vue": "^2.1.0",
     "vue-lazyload": "^1.0.0-rc10",

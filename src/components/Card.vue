@@ -1,14 +1,24 @@
 
 <template>
-  <div>
-    <a v-bind:href="post.url" target="_blank">
-      <img v-lazy="post.thumbnail" class="w3-hover-opacity post-image" />
-    </a>
-    <p>{{ formatDate() }}</p>
-    <a v-bind:href="post.url" target="_blank">
-      <h4>{{ post.title }}</h4>
-    </a>
-    <p>- {{ authorList }}</p>
+  <div class="card">
+    <div class="card-image">
+      <figure class="image is-400x300">
+        <a v-bind:href="post.url" target="_blank">
+          <img v-lazy="post.thumbnail">
+        </a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="card-content">
+        <small>{{ formatDate() }}</small>
+        <p class="title is-5">
+          {{ post.title }}
+        </p>
+        <p class="subtitle is-6">
+           <small>{{ post.feed.blog.title }}</small>
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -35,7 +45,13 @@ export default {
 </script>
 
 <style>
-.post-image {
-  width: 100%;
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  padding: 10px;
 }
 </style>

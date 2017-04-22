@@ -1,7 +1,7 @@
 <template>
   <div class="posts">
-    <div class="w3-row-padding w3-margin-bottom w3-center" v-for="i in rowCount">
-      <div class="w3-quarter" v-for="post in postCountInRow(i)">
+    <div class="columns" v-for="i in rowCount">
+      <div class="column" v-for="post in postCountInRow(i)">
         <card v-bind:post="post"></card>
       </div>
     </div>
@@ -11,7 +11,7 @@
 <script>
 import Card from './Card'
 
-// var apiURL = 'http://localhost:9000/api/posts'
+var apiUrl = 'http://localhost:8000/api/posts'
 
 export default {
   name: 'posts',
@@ -39,7 +39,7 @@ export default {
 
   methods: {
     fetchPosts () {
-      this.$http.get('http://localhost:8000/api/posts/').then((response) => {
+      this.$http.get(apiUrl).then((response) => {
         this.posts = response.data
       }, (response) => {
         console.log('API call error: ' + response.status + ': ' + response.statusText)
@@ -54,5 +54,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<!-- <style scoped>
-</style> -->
+<style scoped>
+.posts {
+  max-width: 1200px;
+  margin: auto;
+}
+</style>
