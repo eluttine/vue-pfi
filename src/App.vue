@@ -1,27 +1,16 @@
 <template>
   <div>
-    <nav class="nav">
-      <div class="nav-left">
-        <a class="nav-item">
-          <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
-        </a>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1">
+          Purjehtijat.fi
+        </h1>
+        <h2 class="subtitle is-5">
+          Tuulesta temmattua.
+        </h2>
       </div>
+    </div>
 
-      <!-- This "nav-menu" is hidden on mobile -->
-      <!-- Add the modifier "is-active" to display it on mobile -->
-      <div class="nav-right nav-menu">
-        <span class="nav-item">
-          <a class="button" >
-            <span class="icon">
-              <i class="fa fa-twitter"></i>
-            </span>
-            <span>Tweet</span>
-          </a>
-        </span>
-      </div>
-    </nav>
-
-    <!-- Content -->
     <div class="section main pfi-grid">
       <posts></posts>
     </div>
