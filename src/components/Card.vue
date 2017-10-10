@@ -12,10 +12,14 @@
       <div class="card-content">
         <small>{{ formatDate() }}</small>
         <p class="title is-5">
-          {{ post.title }}
+          <a v-bind:href="post.url" target="_blank">
+            {{ post.title }}
+          </a>
         </p>
         <p class="subtitle is-6">
+          <a v-bind:href="post.feed.blog.url" target="_blank">
            <small>{{ post.feed.blog.title }}</small>
+          </a>
         </p>
       </div>
     </div>
@@ -45,10 +49,20 @@ export default {
 </script>
 
 <style>
+a {
+  color: black;
+}
+a:hover {
+  color: gray;
+}
+
+
 .card {
   height: 100%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
 .card-content {

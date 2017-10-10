@@ -40,7 +40,7 @@ export default {
 }
 
 .content {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin-top: 80px;
   margin-bottom: 80px;
 }
